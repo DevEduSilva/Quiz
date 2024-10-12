@@ -34,7 +34,7 @@ body {
   align-items: center;
 }
 
-.question-container {
+.questions-container {
   width: 100%;
   display: flex;
   flex-direction: column;

@@ -3,16 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
+    <!-- Link para CSS do questionário -->
     <link rel="stylesheet" href="style.css" />
-    <script></script>
-    
+    <!-- Criando com async para garantir rodar após carregar html -->
+    <script src="index.js" async></script>
+
     <title>Quiz JS</title>
   </head>
+
   <body>
     <div class="container">
-      <div class="question-container hide">
+      <div class="questions-container hide">
         <span class="question">Pergunta aqui!</span>
+
         <div class="answers-container">
           <button class="answer button">Resposta 1</button>
           <button class="answer button">Resposta 2</button>
@@ -20,6 +24,7 @@
           <button class="answer button">Resposta 4</button>
         </div>
       </div>
+
       <div class="controls-container">
         <button class="start-quiz button">Começar Quiz!</button>
         <button class="next-question button hide">Próxima Pergunta!</button>
