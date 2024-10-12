@@ -73,7 +73,8 @@ body {
   transition: filter 0.2s;
 }
 
-.button:hover {
+/* Só vai funcionar em botão ativado */
+.button:not(:disabled):hover {
   filter: brightness(0.8);
 }
 
