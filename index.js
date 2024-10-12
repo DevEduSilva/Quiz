@@ -34,15 +34,42 @@ function displayNextQuestion() {
         newAnswer.classList.add("answer", "button")
         newAnswer.textContent = answer.text
 
+        // Gravar o estado da resposta para verificar se foi correta no futuro
         if (answer.correct) {
             newAnswer.dataset.correct = answer.correct
         }
 
         $answersContainer.appendChild(newAnswer)
 
+        //feito para capturar qual resposta foi selecionada
+        newAnswer.addEventListener("click", selectAnswer)
     })
 }
+// armezenar resposta do user
+function selectAnswer(event) {
+    const answerClicked = event.target
 
+    // Verificar se a resposta foi correta
+    if (answerClicked.dataset.correct) {
+        // altera o fundo para verde para confirmar a resposta
+        document.body.classList.add("correct")
+    } else {
+        // altera o fundo para vermelho
+        document.body.classList.add("incorrect")
+    }
+
+    document.querySelectorAll(".answer").forEach(button => {
+        if (button.dataset.correct) {
+            // altera o botão para verde para confirmar a resposta
+            button.classList.add("correct")
+        } else {
+            // altera o botao para verde para confirmar a resposta
+            button.classList.add("incorrect")
+        }
+        // desabilita o botão
+        button.disabled = true
+    });
+}
 
 
 

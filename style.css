@@ -77,6 +77,18 @@ body {
   filter: brightness(0.8);
 }
 
+.answer:disabled {
+  cursor: not-allowed;
+}
+
 .hide {
   display: none;
+}
+
+.correct {
+  background-color: #049b48;
+}
+
+.incorrect {
+  background-color: #a10101;
 }
