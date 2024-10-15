@@ -3,12 +3,15 @@ const $startGameButton = document.querySelector(".start-quiz")
 const $questionsContainer = document.querySelector(".questions-container")
 const $answersContainer = document.querySelector(".answers-container")
 const $questionText = document.querySelector(".question")
+const $nextQuestionButton = document.querySelector(".next-question")
 
 // Indicador de questão atual
 let currentQuestionIndex = 0
 
 // Função de click para iniciar o quiz
 $startGameButton.addEventListener("click", startGame)
+// Função de click para avançar para a próxima questão
+$nextQuestionButton.addEventListener("click", displayNextQuestion)
 
 // Função de iniciar o quiz e mostar a parte de perguntas
 function startGame() {
@@ -19,11 +22,8 @@ function startGame() {
 }
 
 function displayNextQuestion() {
-    // verifica se há um elemento filho na variavels seguinte
-    while ($answersContainer.firstChild) {
-        // remover elementos filhos
-        $answersContainer.removeChild($answersContainer.firstChild)
-    }
+    //resetar estado do quiz
+    resetState()
 
     // Verifica se ainda há questões e insere
     $questionText.textContent = questions[currentQuestionIndex].question
@@ -45,6 +45,22 @@ function displayNextQuestion() {
         newAnswer.addEventListener("click", selectAnswer)
     })
 }
+
+//resetar estado do quiz
+function resetState() {
+    // verifica se há um elemento filho na variavels seguinte
+    while ($answersContainer.firstChild) {
+        // remover elementos filhos
+        $answersContainer.removeChild($answersContainer.firstChild)
+    }
+
+    //feito para remover efeitos de retorno visual (incorreto ou correto)
+    document.body.removeAttribute("class")
+
+    // Deixará o botão de proxima oculta até selecionar outra resposta novamente
+    $nextQuestionButton.classList.add("hide")
+}
+
 // armezenar resposta do user
 function selectAnswer(event) {
     const answerClicked = event.target
@@ -69,6 +85,9 @@ function selectAnswer(event) {
         // desabilita o botão
         button.disabled = true
     });
+
+    $nextQuestionButton.classList.remove("hide")
+    currentQuestionIndex++
 }
 
 
