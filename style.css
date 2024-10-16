@@ -82,6 +82,16 @@ body {
   cursor: not-allowed;
 }
 
+.final-message {
+  font-size: 20px;
+  text-align: center;
+}
+
+.final-message span {
+  display: block;
+  margin-top: 8px;
+}
+
 .hide {
   display: none;
 }
