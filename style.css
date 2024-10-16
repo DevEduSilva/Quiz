@@ -56,6 +56,13 @@ body {
   gap: 16px;
 }
 
+/* Media Queries para dispositivos móveis e tablets */
+@media only screen and (max-width: 768px) {
+  .answers-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 .next-question {
   margin-top: 32px;
 }
