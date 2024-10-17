@@ -4,6 +4,8 @@ const $questionsContainer = document.querySelector(".questions-container")
 const $answersContainer = document.querySelector(".answers-container")
 const $questionText = document.querySelector(".question")
 const $nextQuestionButton = document.querySelector(".next-question")
+const $statusGood = document.querySelector(".feedbackGood")
+const $statusBad = document.querySelector(".feedbackBad")
 
 // Indicador de questão atual
 let currentQuestionIndex = 0
@@ -66,6 +68,8 @@ function resetState() {
     document.body.removeAttribute("class")
 
     // Deixará o botão de proxima oculta até selecionar outra resposta novamente
+    $statusGood.classList.add("hide")
+    $statusBad.classList.add("hide")
     $nextQuestionButton.classList.add("hide")
 }
 
@@ -77,11 +81,14 @@ function selectAnswer(event) {
     if (answerClicked.dataset.correct) {
         // altera o fundo para verde para confirmar a resposta
         document.body.classList.add("correct")
+        $statusGood.classList.remove("hide")
         // incrementar o total de respostas corretas
         totalCorrect++
     } else {
         // altera o fundo para vermelho
         document.body.classList.add("incorrect")
+        $statusBad.classList.remove("hide")
+
     }
 
     document.querySelectorAll(".answer").forEach(button => {
@@ -110,14 +117,17 @@ function finishGame() {
     let message = ""
 
     switch (true) {
+        case (performance >= 100):
+            message = "Parabéns, você acertou 100%!"
+            break
         case (performance >= 90):
             message = "Aprovado! Parabéns, você acertou 90% ou mais!!"
             break
         case (performance >= 70):
             message = "Aprovado! Parabéns, você acertou 70% ou mais!!"
             break
-        case (performance >= 50):
-            message = "Não atingiu o requisito! Tente novamente!"
+        case (performance >= 60):
+            message = "Não atingiu o requisito! Mas foi quase. Tente novamente!"
             break
         default:
             message = "Não atingiu o requisito! Pode melhorar"
