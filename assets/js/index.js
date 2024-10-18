@@ -118,16 +118,10 @@ function finishGame() {
 
     switch (true) {
         case (performance >= 100):
-            message = "Parabéns, você acertou 100%!"
-            break
-        case (performance >= 90):
-            message = "Aprovado! Parabéns, você acertou 90% ou mais!!"
+            message = "Parabéns, você todas as questões!"
             break
         case (performance >= 70):
-            message = "Aprovado! Parabéns, você acertou 70% ou mais!!"
-            break
-        case (performance >= 60):
-            message = "Não atingiu o requisito! Mas foi quase. Tente novamente!"
+            message = `Aprovado! Parabéns, você acertou ${performance}% das questões!!`
             break
         default:
             message = "Não atingiu o requisito! Pode melhorar"
