@@ -41,7 +41,7 @@ function displayNextQuestion() {
     }
 
     // Verifica se ainda há questões e insere
-    $questionText.textContent = questions[currentQuestionIndex].question
+    $questionText.textContent = `${currentQuestionIndex + 1}) ${questions[currentQuestionIndex].question}`
 
     // Mostrar as respostas disponíveis para a pergunta atual
     questions[currentQuestionIndex].answers.forEach(answer => {
