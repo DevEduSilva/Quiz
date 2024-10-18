@@ -110,3 +110,24 @@ body {
 .incorrect {
   background-color: #a10101;
 }
+
+.status-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.status {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 20px;
+  text-align: center;
+  letter-spacing: 5px;
+
+}
