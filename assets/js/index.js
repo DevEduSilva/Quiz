@@ -8,6 +8,8 @@ const $nextQuestionButton = document.querySelector(".next-question");
 const $statusGood = document.querySelector(".feedbackGood");
 const $statusBad = document.querySelector(".feedbackBad");
 const $imgElement = document.querySelector(".question-image");
+const $progressBarContainer = document.querySelector(".progress-bar-container")
+const $progressBar = document.querySelector(".progress-bar")
 
 let currentQuestionIndex = 0;
 let totalCorrect = 0;
@@ -19,6 +21,7 @@ $nextQuestionButton.addEventListener("click", displayNextQuestion);
 function startGame() {
     $startGameButton.classList.add("hide");
     $questionsContainer.classList.remove("hide");
+    $progressBarContainer.classList.remove("hide");
 
     displayNextQuestion();
 }
@@ -27,6 +30,7 @@ function displayNextQuestion() {
     resetState();
 
     if (questions.length === currentQuestionIndex) {
+        $progressBarContainer.classList.add("hide");
         return finishGame();
     }
 
@@ -40,6 +44,10 @@ function displayNextQuestion() {
     } else {
         $imgElement.classList.add("hide"); // Ocultar imagem se não houver
     }
+
+    // Atualizar a barra de progresso
+    const progressPercentage = ((currentQuestionIndex + 1) / questions.length) * 100;
+    $progressBar.style.width = `${progressPercentage}%`;
 
     // Mostrar respostas da pergunta atual
     questions[currentQuestionIndex].answers.forEach(answer => {

@@ -140,3 +140,18 @@ body {
 .question-image {
   height: 20vh;
 }
+
+.progress-bar-container {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  height: 3px;
+  margin-bottom: 15px;
+}
+
+.progress-bar {
+  width: 0;
+  height: 100%;
+  background-color: #00ff0d;
+  border-radius: 5px;
+}
