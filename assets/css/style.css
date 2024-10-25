@@ -115,7 +115,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   gap: 16px;
   margin-bottom: 20px;
 }
@@ -129,5 +129,14 @@ body {
   padding: 5px 20px;
   text-align: center;
   letter-spacing: 5px;
+}
 
+/* formatação das imgs */
+.img {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.question-image {
+  height: 20vh;
 }

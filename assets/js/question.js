@@ -7,7 +7,8 @@ export const questions = [
             { text: "<js>", correct: false },
             { text: "<script>", correct: true },
             { text: "<scripting>", correct: false }
-        ]
+        ],
+        image: "assets/img/teste1.png"
     },
     {
         question: "Onde é o lugar correto para inserir JavaScript?",
@@ -16,7 +17,8 @@ export const questions = [
             { text: "No <body>", correct: false },
             { text: "No <head>", correct: false },
             { text: "Em outro lugar", correct: false }
-        ]
+        ],
+        image: "assets/img/teste2.png"
     },
     {
         question: 'Qual é a sintaxe correta para se referir a um script externo chamado "xxx.js"',
@@ -32,7 +34,8 @@ export const questions = [
         answers: [
             { text: "Verdadeiro", correct: false },
             { text: "Falso", correct: true }
-        ]
+        ],
+        image: "assets/img/teste3.png"        
     },
     {
         question: 'Como escrever "Hello World" numa caixa de alerta?',
